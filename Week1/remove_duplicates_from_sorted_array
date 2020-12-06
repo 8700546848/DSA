@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int n=nums.size();
+        int j=0;
+        int i=1;
+        while(i<=n-1){
+           if(nums[j]==nums[i]){
+            nums.erase(nums.begin()+i);
+               n--;
+           }
+           else{
+             j++;
+             i++;
+           }
+        }
+        int as=nums.size();
+        for(int i=0;i<as;i++){
+            cout<<nums[i]<<",";
+        }
+        return as;
+        
+    }
+};
